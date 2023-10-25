@@ -1,47 +1,11 @@
 /* Project*/
 
-const charactersElement = document.querySelector("#characters");
+/* import displayCharacters function */
+
+import { displayCharacters } from "./displayCharacters.js";
+
 let characterList = [];
-
-/* displayCharacters Function */
-
-const displayCharacters = (characters) => {
-    characters.forEach (character => {
-        let article = document.createElement("article");
-        let id = document.createElement("id");
-        id.textContent = `ID: ${character.id}`;
-        let name = document.createElement("name");
-        name.textContent = `Name: ${character.name}`;
-        let slug = document.createElement("slug");
-        slug.textContent = `Slug: ${character.slug}`;
-        let powerstats = document.createElement("powerstats");
-        powerstats.textContent = `Power Stats: ${character.powerstats}`;
-        let appearance = document.createElement("appearance");
-        appearance.textContent = `Appearance: ${character.appearance}`;
-        let biography = document.createElement("biography");
-        biography.textContent = `Biography: ${character.biography}`;
-        let work = document.createElement("work");
-        work.textContent = `Work: ${character.work}`;
-        let connections = document.createElement("connections");
-        connections.textContent = `Connections: ${character.connections}`;
-        let images = document.createElement("images");
-        images.textContent = `Images: ${character.images}`;
-        let img = document.createElement("img");
-        img.setAttribute("src", character.images.md);
-        img.setAttribute("alt", `img of ${name}`);
-        article.appendChild(id);
-        article.appendChild(name);
-        article.appendChild(slug);
-        article.appendChild(powerstats);
-        article.appendChild(appearance);
-        article.appendChild(biography);
-        article.appendChild(work);
-        article.appendChild(connections);
-        article.appendChild(images);
-        article.appendChild(img);
-        charactersElement.appendChild(article);
-    })
-}
+const charactersElement = document.querySelector("#characters");
 
 /* reset Function */
 
@@ -61,7 +25,6 @@ const getCharacters = async () => {
     }
 }
 
-
 /* sortBy Function */
 
 const sortBy = (characters) => {
@@ -76,12 +39,19 @@ const sortBy = (characters) => {
             let badCharacters = characters.filter(character => character.biography.alignment.includes("bad"));
             displayCharacters(badCharacters);
             break;
+        case "male":
+            let maleCharacters = characters.filter(character => character.appearance.gender.includes("Male"));
+            displayCharacters(maleCharacters);
+            break;
+        case "female":
+            let femaleCharacters = characters.filter(character => character.appearance.gender.includes("Female"));
+            displayCharacters(femaleCharacters);
+            break;
         case "all":
             displayCharacters(characters);
             break;
     }
 }
-
 
 getCharacters();
 

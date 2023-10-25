@@ -288,7 +288,7 @@ footer {
 }
 
 #characters article {
-    height: 250px;
+    height: 1150px;
     margin: .5rem;
     border: 1px solid rgba(0, 0, 0, .1);
     padding: 1rem;
@@ -297,6 +297,15 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
+}
+
+#characters article div {
+    text-align: left;
+}
+
+.power-stats {
+    text-align: left;
 }
 
 #characters h4 {
@@ -310,6 +319,11 @@ footer {
     height: auto;
     box-shadow: 0 0 30px #777;
     margin: .5rem;
+}
+
+.indent {
+    margin-left: 20px;
+    margin-bottom: 0%;
 }
 
 /* Media Queries */

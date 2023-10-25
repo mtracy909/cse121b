@@ -21,8 +21,8 @@
         <li><a href="w01-task.html">W1 Task</a></li>
         <li><a href="w03-task.html">W3 Task</a></li>
         <li><a href="w04-task.html">W4 Task</a></li>
-        <li><a href="w05-task.html" class="active">W5 Task</a></li>
-        <li><a href="project.html">Project</a></li>
+        <li><a href="w05-task.html">W5 Task</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
       </ul>
     </nav>
     <main id="gridly">
@@ -32,6 +32,8 @@
         <option value="" disabled selected>Filter Characters</option>
         <option value="good">Good Alignment</option>
         <option value="bad">Bad Alignment</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
         <option value="all">No Filter</option>
       </select>
 
@@ -43,6 +45,6 @@
     <script>
       document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
-    <script src="scripts/project.js"></script>
+    <script src="scripts/project.js" type="module"></script>
   </body>
 </html>
